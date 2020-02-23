@@ -17,35 +17,20 @@
     
     <!-- Your own CSS -->
     <link rel="stylesheet" href="/styles.css">
-
-    <title> Weather and News </title>
-  </head>
-  <body>
-
-
-    <div class="container mt-5">
-        <form action = "/news">
+       
+    <div class="container-fluid weather-container">
+        <div class="bg-light"> 
+        <center>    
+        <h1> Weather in <%= @location %> </h1>
+        </center>
             
-            <center> 
-            <label>Enter the location</label>
-            </center>
-            <center>
-            <input type="location" name="qlocation">
-            </center>
-            </div>
-            <p> 
-            <center>
-            <button type="submit" class="btn btn-success">Go to News & Weather</button>
-            </center>
-            </p>
-        </form>
-    </div>
-
-
-
-
-
-
+        </div>
+        <p>
+        <center>
+         The current temperature is <%= @forecast["currently"]["temperature"].round %>°F 
+         </center>
+        </p>
+     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
