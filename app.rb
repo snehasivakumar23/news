@@ -20,6 +20,8 @@ get "/news" do
     @lat_long = @geocoder_results.first.coordinates # => [lat, long] array
     @forecast = ForecastIO.forecast(@lat_long[0],@lat_long[1]).to_hash
     #"#{@forecast}"
+    @url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=be23bdea6d684a30a91332a123eff0d2"
+    @news = HTTParty.get(url).parsed_response.to_hash
  
     view "news"
 end
